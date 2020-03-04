@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>head</key>
+		<string>学生提交作业  异步提交</string>
+	</dict>
+	<dict>
+		<key>head</key>
+		<string>老师批改作业 同步调试</string>
+	</dict>
+	<dict>
+		<key>head</key>
+		<string>在上体育课时，被老师叫到办公室改作业</string>
+	</dict>
+	<dict>
+		<key>head</key>
+		<string>留下背诵题后课堂上检查</string>
+	</dict>
+	<dict>
+		<key>head</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>head</key>
+		<string></string>
+	</dict>
+	<dict>
+		<key>head</key>
+		<string></string>
+	</dict>
+</array>
+</plist>
