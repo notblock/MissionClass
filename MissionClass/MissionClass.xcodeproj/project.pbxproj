@@ -11,13 +11,14 @@
 		26806825240DDD0B00A64D66 /* DebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26806824240DDD0B00A64D66 /* DebugView.m */; };
 		26806828240DF5ED00A64D66 /* dispatch.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26806827240DF5ED00A64D66 /* dispatch.plist */; };
 		2680682B240DFAA300A64D66 /* ConsumingTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680682A240DFAA300A64D66 /* ConsumingTimes.m */; };
+		26806830240F98D300A64D66 /* MissionClassDispatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2680682E240F98D300A64D66 /* MissionClassDispatch.mm */; };
+		26806833240F991A00A64D66 /* MissionClassDispatchBug.mm in Sources */ = {isa = PBXBuildFile; fileRef = 26806832240F991A00A64D66 /* MissionClassDispatchBug.mm */; };
 		7C1C06C6240D3A9D00D1AEDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C06C5240D3A9D00D1AEDC /* AppDelegate.m */; };
 		7C1C06C9240D3A9D00D1AEDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C06C8240D3A9D00D1AEDC /* ViewController.m */; };
 		7C1C06CE240D3A9E00D1AEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C1C06CD240D3A9E00D1AEDC /* Assets.xcassets */; };
 		7C1C06D1240D3A9E00D1AEDC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C1C06CF240D3A9E00D1AEDC /* LaunchScreen.storyboard */; };
 		7C1C06D4240D3A9E00D1AEDC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C06D3240D3A9E00D1AEDC /* main.m */; };
 		7C1C06DE240D3C6D00D1AEDC /* ClassRoute.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C06DD240D3C6D00D1AEDC /* ClassRoute.m */; };
-		7C1C06E1240D3C9B00D1AEDC /* MissionClass_Dispatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C06E0240D3C9B00D1AEDC /* MissionClass_Dispatch.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,10 @@
 		26806827240DF5ED00A64D66 /* dispatch.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = dispatch.plist; sourceTree = "<group>"; };
 		26806829240DFAA300A64D66 /* ConsumingTimes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConsumingTimes.h; sourceTree = "<group>"; };
 		2680682A240DFAA300A64D66 /* ConsumingTimes.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ConsumingTimes.m; sourceTree = "<group>"; };
+		2680682E240F98D300A64D66 /* MissionClassDispatch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MissionClassDispatch.mm; sourceTree = "<group>"; };
+		2680682F240F98D300A64D66 /* MissionClassDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionClassDispatch.h; sourceTree = "<group>"; };
+		26806831240F991A00A64D66 /* MissionClassDispatchBug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionClassDispatchBug.h; sourceTree = "<group>"; };
+		26806832240F991A00A64D66 /* MissionClassDispatchBug.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MissionClassDispatchBug.mm; sourceTree = "<group>"; };
 		7C1C06C1240D3A9D00D1AEDC /* MissionClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissionClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1C06C4240D3A9D00D1AEDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7C1C06C5240D3A9D00D1AEDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -39,8 +44,6 @@
 		7C1C06D3240D3A9E00D1AEDC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7C1C06DC240D3C6D00D1AEDC /* ClassRoute.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClassRoute.h; sourceTree = "<group>"; };
 		7C1C06DD240D3C6D00D1AEDC /* ClassRoute.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClassRoute.m; sourceTree = "<group>"; };
-		7C1C06DF240D3C9B00D1AEDC /* MissionClass_Dispatch.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MissionClass_Dispatch.h; sourceTree = "<group>"; };
-		7C1C06E0240D3C9B00D1AEDC /* MissionClass_Dispatch.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = MissionClass_Dispatch.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +125,10 @@
 		7C1C06DB240D3C5D00D1AEDC /* class */ = {
 			isa = PBXGroup;
 			children = (
-				7C1C06DF240D3C9B00D1AEDC /* MissionClass_Dispatch.h */,
-				7C1C06E0240D3C9B00D1AEDC /* MissionClass_Dispatch.mm */,
+				2680682F240F98D300A64D66 /* MissionClassDispatch.h */,
+				2680682E240F98D300A64D66 /* MissionClassDispatch.mm */,
+				26806831240F991A00A64D66 /* MissionClassDispatchBug.h */,
+				26806832240F991A00A64D66 /* MissionClassDispatchBug.mm */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -201,11 +206,12 @@
 				2680682B240DFAA300A64D66 /* ConsumingTimes.m in Sources */,
 				26806825240DDD0B00A64D66 /* DebugView.m in Sources */,
 				7C1C06DE240D3C6D00D1AEDC /* ClassRoute.m in Sources */,
-				7C1C06E1240D3C9B00D1AEDC /* MissionClass_Dispatch.mm in Sources */,
 				7C1C06C9240D3A9D00D1AEDC /* ViewController.m in Sources */,
 				7C1C06D4240D3A9E00D1AEDC /* main.m in Sources */,
 				26806822240DDCF900A64D66 /* DebugText.m in Sources */,
+				26806833240F991A00A64D66 /* MissionClassDispatchBug.mm in Sources */,
 				7C1C06C6240D3A9D00D1AEDC /* AppDelegate.m in Sources */,
+				26806830240F98D300A64D66 /* MissionClassDispatch.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

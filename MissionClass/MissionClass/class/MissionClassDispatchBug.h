@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface MissionClass_Dispatch : UIViewController
+@interface MissionClassDispatchBug : UIViewController
 
 @end
 

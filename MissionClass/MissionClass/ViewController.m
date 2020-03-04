@@ -7,7 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "MissionClass_Dispatch.h"
+#import "MissionClassDispatch.h"
+#import "MissionClassDispatchBug.h"
+
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
     UITableView *_table;
@@ -26,7 +28,8 @@
     tableData = @[
                   @{@"head":@"iOS的线程操作集合",
                     @"data":@[
-                              @"iOS dispatch系列"
+                              @"iOS dispatch系列",
+                              @"iOS dispatch系列 bug"
                                 ]
                     }
                   ];
@@ -67,8 +70,12 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 0) {
-        MissionClass_Dispatch *control = [[MissionClass_Dispatch alloc] init];
+    if (indexPath.section == 0 && indexPath.row == 0) {
+        MissionClassDispatch *control = [[MissionClassDispatch alloc] init];
+        control.title = ((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row];
+        [self.navigationController pushViewController:control animated:YES];
+    } else if (indexPath.section == 0 && indexPath.row == 1)  {
+        MissionClassDispatchBug *control = [[MissionClassDispatchBug alloc] init];
         control.title = ((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row];
         [self.navigationController pushViewController:control animated:YES];
     }

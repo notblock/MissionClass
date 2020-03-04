@@ -6,7 +6,7 @@
 //  Copyright © 2020 notblock. All rights reserved.
 //
 
-#import "MissionClass_Dispatch.h"
+#import "MissionClassDispatch.h"
 #import "DebugView.h"
 
 #define LogInfo(frm,...) \
@@ -33,11 +33,11 @@ extern "C" {
 #define CLASSMATES 15   //全班同学
 
 
-@interface MissionClass_Dispatch()<UITableViewDelegate, UITableViewDataSource>
+@interface MissionClassDispatch()<UITableViewDelegate, UITableViewDataSource>
 
 @end
 
-@implementation MissionClass_Dispatch
+@implementation MissionClassDispatch
 {
     UITableView *_table;
     DebugView *_debugText;
