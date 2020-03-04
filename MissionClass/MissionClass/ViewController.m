@@ -11,9 +11,8 @@
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
     UITableView *_table;
+    NSArray *tableData;
 }
-
-
 @end
 
 @implementation ViewController
@@ -24,6 +23,13 @@
     
     [self.table setDelegate:self];
     [self.table setDataSource:self];
+    tableData = @[
+                  @{@"head":@"iOS的线程操作集合",
+                    @"data":@[
+                              @"iOS dispatch系列"
+                                ]
+                    }
+                  ];
 }
 
 - (UITableView *)table {
@@ -35,9 +41,18 @@
     return _table;
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return tableData.count;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return ((NSArray *)((NSDictionary *)tableData[section])[@"data"]).count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
+    return ((NSDictionary *)tableData[section])[@"head"];
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellName = @"cell";
@@ -45,7 +60,7 @@
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellName];
     }
-    
+    [cell.textLabel setText:((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row]];
     return cell;
 }
 
@@ -54,6 +69,7 @@
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     if (indexPath.row == 0) {
         MissionClass_Dispatch *control = [[MissionClass_Dispatch alloc] init];
+        control.title = ((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row];
         [self.navigationController pushViewController:control animated:YES];
     }
 }

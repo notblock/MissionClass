@@ -176,8 +176,6 @@ static NSString *cellName = @"cell";
 
 
 - (void)dispatchSync:(NSIndexPath *)indexPath WithComplate:(void(^)(void))block{
-    dispatch_cancel(<#object#>)
-    dispatch_resume(timer);
     NSTimeInterval tb = [[NSDate new] timeIntervalSince1970];
     NSString *str = ((NSDictionary *)tableData[indexPath.section])[@"head"];
     dispatch_group_t group = dispatch_group_create();
