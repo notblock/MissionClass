@@ -18,5 +18,9 @@
 		<key>head</key>
 		<string>留下背诵题后课堂上检查</string>
 	</dict>
+	<dict>
+		<key>head</key>
+		<string>黑盒子的计数问题 c++&amp;c--</string>
+	</dict>
 </array>
 </plist>

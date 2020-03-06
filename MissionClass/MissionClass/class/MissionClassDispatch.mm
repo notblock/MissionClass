@@ -81,6 +81,8 @@ static NSString *cellName = @"cell";
 //    return ((NSArray *)((NSDictionary *)tableData[section])[@"data"]).count;
     if (section == 2 || section == 3) {
         return 1;
+    } else if (section == 4) {
+        return 2;
     }
     return CLASSMATES;
 }
@@ -100,7 +102,12 @@ static NSString *cellName = @"cell";
     }
     if (indexPath.section == 2 ||indexPath.section == 3) {
         [cell.textLabel setText:[NSString stringWithFormat:@"开始"]];
-    } else {
+    } else if (indexPath.section == 4) {
+        [cell.textLabel setText:[NSString stringWithFormat:@"同学 %@ %c",
+                                 indexPath.row == 0 ?@"加锁":@"不加锁",
+                                 charAdd(indexPath.row)]];
+    }
+    else {
         [cell.textLabel setText:[NSString stringWithFormat:@"同学 %c", charAdd(indexPath.row)]];
     }
     return cell;
@@ -109,16 +116,22 @@ static NSString *cellName = @"cell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    if (indexPath.row == 0 && indexPath.section == 0) {
+    if (indexPath.section == 0 && indexPath.row == 0) {
         [self dispatchAsync:indexPath];
-    } else if (indexPath.row == 0 && indexPath.section == 1) {
+    } else if (indexPath.section == 1 && indexPath.row == 0) {
         [self dispatchSync:indexPath];
-    } else if (indexPath.row == 0 && indexPath.section == 2) {
+    } else if (indexPath.section == 2 && indexPath.row == 0) {
         [self dispatchSemaphore:indexPath];
         return;
-    } else if (indexPath.row == 0 && indexPath.section == 3) {
+    } else if (indexPath.section == 3 && indexPath.row == 0) {
         [self dispatchAsyncToSync];
         return;
+    } else if (indexPath.section == 4) {
+        if (indexPath.row == 0) {
+            [self subAndAdd:YES];
+        } else if (indexPath.row == 1) {
+            [self subAndAdd:NO];
+        }
     }
     UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [cell.textLabel setTextColor:[UIColor purpleColor]];
@@ -251,5 +264,77 @@ static NSString *cellName = @"cell";
     });
 }
 
+- (void)subAndAdd:(BOOL)lock {
+    if (lock) {
+        [self lockSubAndAdd];
+    } else {
+        [self unlockSubAndAdd];
+    }
+}
+static int count = 0;
+- (void)unlockSubAndAdd {
+    dispatch_queue_t lockQueue = dispatch_queue_create("com.notblock.lock", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t classmateA = dispatch_queue_create("com.notblock.classmateA", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t classmateB = dispatch_queue_create("com.notblock.classmateB", DISPATCH_QUEUE_SERIAL);
+    NSTimeInterval timesBegin = [[NSDate new] timeIntervalSince1970];
+    
+    count = 0;
+    dispatch_group_t group = dispatch_group_create();
+    LogInfo(@"敲击开始");
+    dispatch_group_enter(group);
+    dispatch_async(classmateA, ^{
+        for (int j = 0; j < 1000000000; j ++) { count++; }
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(classmateB, ^{
+        for (int j = 0; j < 1000000000; j ++) { count--; }
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_notify(group, lockQueue, ^{
+        NSTimeInterval timesEnd = [[NSDate new] timeIntervalSince1970];
+        if (count == 0) {
+            LogInfo(@"敲击完成 耗时\t  %f",timesEnd - timesBegin)
+        } else {
+            LogError(@"敲击完成 count=%d  耗时\t  %f", count, timesEnd - timesBegin);
+        }
+    });
+}
 
+- (void)lockSubAndAdd {
+    dispatch_queue_t lockQueue = dispatch_queue_create("com.notblock.lock", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t classmateA = dispatch_queue_create("com.notblock.classmateA", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t classmateB = dispatch_queue_create("com.notblock.classmateB", DISPATCH_QUEUE_SERIAL);
+    NSTimeInterval timesBegin = [[NSDate new] timeIntervalSince1970];
+    
+    count = 0;
+    dispatch_group_t group = dispatch_group_create();
+    LogInfo(@"敲击开始");
+    dispatch_group_enter(group);
+    dispatch_async(classmateA, ^{
+        dispatch_sync(lockQueue, ^{
+            for (int j = 0; j < 1000000000; j ++) { count++; }
+        });
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_enter(group);
+    dispatch_async(classmateB, ^{
+        dispatch_sync(lockQueue, ^{
+            for (int j = 0; j < 1000000000; j ++) { count--; }
+        });
+        dispatch_group_leave(group);
+    });
+    
+    dispatch_group_notify(group, lockQueue, ^{
+        NSTimeInterval timesEnd = [[NSDate new] timeIntervalSince1970];
+        if (count == 0) {
+            LogInfo(@"敲击完成 耗时\t  %f",timesEnd - timesBegin)
+        } else {
+            LogError(@"敲击完成 count=%d  耗时\t  %f", count, timesEnd - timesBegin);
+        }
+    });
+}
 @end

@@ -118,7 +118,7 @@ static NSString *cellName = @"cell";
     dispatch_async(controlQueue, ^{
         for (int i = 0; i < CLASSMATES; i ++) {
             LogInfo(@"%c 开始", charAdd(i));
-            if (c < CLASSMATES && ) {
+            if (c < CLASSMATES ) {
 #warning 这里存在问题，这里会重新把任务加入队列，controlQueue是串联队列，所以会导致无限循环调用，判断条件需要 c != 0
                 [self asyncNextTableRow:[NSIndexPath indexPathForRow:c inSection:indexPath.section]];
             }
