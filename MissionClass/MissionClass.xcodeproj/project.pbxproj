@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2678968B2415CA8800755972 /* MissionClassDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678968A2415CA8800755972 /* MissionClassDispatch.swift */; };
 		26806822240DDCF900A64D66 /* DebugText.m in Sources */ = {isa = PBXBuildFile; fileRef = 26806820240DDCF900A64D66 /* DebugText.m */; };
 		26806825240DDD0B00A64D66 /* DebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26806824240DDD0B00A64D66 /* DebugView.m */; };
 		26806828240DF5ED00A64D66 /* dispatch.plist in Resources */ = {isa = PBXBuildFile; fileRef = 26806827240DF5ED00A64D66 /* dispatch.plist */; };
@@ -22,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2678968A2415CA8800755972 /* MissionClassDispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionClassDispatch.swift; sourceTree = "<group>"; };
+		2678968C2415CAB900755972 /* MissionClass-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MissionClass-Bridging-Header.h"; sourceTree = "<group>"; };
 		26806820240DDCF900A64D66 /* DebugText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugText.m; sourceTree = "<group>"; };
 		26806821240DDCF900A64D66 /* DebugText.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DebugText.h; sourceTree = "<group>"; };
 		26806823240DDD0B00A64D66 /* DebugView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DebugView.h; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 				2680682E240F98D300A64D66 /* MissionClassDispatch.mm */,
 				26806831240F991A00A64D66 /* MissionClassDispatchBug.h */,
 				26806832240F991A00A64D66 /* MissionClassDispatchBug.mm */,
+				2678968A2415CA8800755972 /* MissionClassDispatch.swift */,
+				2678968C2415CAB900755972 /* MissionClass-Bridging-Header.h */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				TargetAttributes = {
 					7C1C06C0240D3A9D00D1AEDC = {
 						CreatedOnToolsVersion = 10.2;
+						LastSwiftMigration = 1030;
 					};
 				};
 			};
@@ -206,6 +212,7 @@
 				2680682B240DFAA300A64D66 /* ConsumingTimes.m in Sources */,
 				26806825240DDD0B00A64D66 /* DebugView.m in Sources */,
 				7C1C06DE240D3C6D00D1AEDC /* ClassRoute.m in Sources */,
+				2678968B2415CA8800755972 /* MissionClassDispatch.swift in Sources */,
 				7C1C06C9240D3A9D00D1AEDC /* ViewController.m in Sources */,
 				7C1C06D4240D3A9E00D1AEDC /* main.m in Sources */,
 				26806822240DDCF900A64D66 /* DebugText.m in Sources */,
@@ -345,6 +352,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MissionClass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -353,6 +361,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.notblock.MissionClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MissionClass/class/MissionClass-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -361,6 +372,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = MissionClass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -369,6 +381,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.notblock.MissionClass;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MissionClass/class/MissionClass-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

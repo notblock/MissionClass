@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "MissionClassDispatch.h"
+#import "MissionClass-Swift.h"
 #import "MissionClassDispatchBug.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
@@ -28,7 +29,8 @@
     tableData = @[
                   @{@"head":@"iOS的线程操作集合",
                     @"data":@[
-                              @"iOS dispatch系列",
+                              @"iOS oc dispatch 系列",
+                              @"iOS swift dispatch 系列",
                               @"iOS dispatch系列 bug"
                                 ]
                     }
@@ -74,7 +76,13 @@
         MissionClassDispatch *control = [[MissionClassDispatch alloc] init];
         control.title = ((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row];
         [self.navigationController pushViewController:control animated:YES];
-    } else if (indexPath.section == 0 && indexPath.row == 1)  {
+    }
+    else if (indexPath.section == 0 && indexPath.row == 1)  {
+        SWMCDispatch *control = [[SWMCDispatch alloc] init];
+        control.title = ((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row];
+        [self.navigationController pushViewController:control animated:YES];
+    }
+    else if (indexPath.section == 0 && indexPath.row == 2)  {
         MissionClassDispatchBug *control = [[MissionClassDispatchBug alloc] init];
         control.title = ((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row];
         [self.navigationController pushViewController:control animated:YES];

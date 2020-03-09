@@ -19,18 +19,10 @@ dispatch_async(dispatch_get_main_queue(), ^{\
 [self.debugText logError:[NSString stringWithFormat:@"%@\n", [NSString stringWithFormat:(frm),##__VA_ARGS__]]];\
 });
 
-#if defined(__cplusplus)
-extern "C" {
-#endif
-    static char charAdd(int64_t a) {
-        return (char)('A' + a);
-    }
-#if defined(__cplusplus)
-}
-#endif
 
 
-#define CLASSMATES 15   //全班同学
+
+
 
 
 @interface MissionClassDispatch()<UITableViewDelegate, UITableViewDataSource>
@@ -105,10 +97,10 @@ static NSString *cellName = @"cell";
     } else if (indexPath.section == 4) {
         [cell.textLabel setText:[NSString stringWithFormat:@"同学 %@ %c",
                                  indexPath.row == 0 ?@"加锁":@"不加锁",
-                                 charAdd(indexPath.row)]];
+                                 charAdd1(indexPath.row)]];
     }
     else {
-        [cell.textLabel setText:[NSString stringWithFormat:@"同学 %c", charAdd(indexPath.row)]];
+        [cell.textLabel setText:[NSString stringWithFormat:@"同学 %c", charAdd1(indexPath.row)]];
     }
     return cell;
 }
@@ -150,12 +142,12 @@ static NSString *cellName = @"cell";
             NSTimeInterval timesBegin = [[NSDate new] timeIntervalSince1970];
             sleep(3);//在努力记忆
             NSTimeInterval timesEnd = [[NSDate new] timeIntervalSince1970];
-            LogInfo(@"%@", [NSString stringWithFormat:@"同学 %c 开始排队准备背诵 耗时:%f", charAdd(i), timesEnd - timesBegin]);
+            LogInfo(@"%@", [NSString stringWithFormat:@"同学 %c 开始排队准备背诵 耗时:%f", charAdd1(i), timesEnd - timesBegin]);
             dispatch_async(authQueue, ^{
                 NSTimeInterval tb = [[NSDate new] timeIntervalSince1970];
                  for (int j = 0; j < 1000000000; j ++) {}//在背诵
                 NSTimeInterval te = [[NSDate new] timeIntervalSince1970];
-                LogInfo(@"%@", [NSString stringWithFormat:@"同学 %c 背诵完成 耗时:%f", charAdd(i), te - tb]);
+                LogInfo(@"%@", [NSString stringWithFormat:@"同学 %c 背诵完成 耗时:%f", charAdd1(i), te - tb]);
                 dispatch_group_leave(group);
             });
         });
@@ -173,7 +165,7 @@ static NSString *cellName = @"cell";
     dispatch_queue_t queue = dispatch_queue_create("com.notblock.async", DISPATCH_QUEUE_CONCURRENT);
     LogInfo(@"%@ 开始", str);
     dispatch_async(queue, ^{
-        LogInfo(@"%@", [NSString stringWithFormat:@"同学 %c 在上体育课", charAdd(0)]);
+        LogInfo(@"%@", [NSString stringWithFormat:@"同学 %c 在上体育课", charAdd1(0)]);
         NSTimeInterval timesBegin = [[NSDate new] timeIntervalSince1970];
         LogInfo(@"被叫去改作业");
         [self dispatchSync:[NSIndexPath indexPathForRow:0 inSection:1] WithComplate:^{
@@ -181,7 +173,7 @@ static NSString *cellName = @"cell";
         }];
         dispatch_semaphore_wait(semaphore, DISPATCH_TIME_FOREVER);
         NSTimeInterval timesEnd = [[NSDate new] timeIntervalSince1970];
-        LogInfo(@"%@ 耗时\t  %f", [NSString stringWithFormat:@"同学 %c 改完作业，接着上体育课", charAdd(0)], timesEnd - timesBegin);
+        LogInfo(@"%@ 耗时\t  %f", [NSString stringWithFormat:@"同学 %c 改完作业，接着上体育课", charAdd1(0)], timesEnd - timesBegin);
         sleep(2.5);
     });
 }
@@ -198,14 +190,14 @@ static NSString *cellName = @"cell";
         dispatch_group_enter(group);
         dispatch_async(queue, ^{
             
-            LogInfo(@"%@", [NSString stringWithFormat:@"同学 %c 开始写作业", charAdd(i)]);
+            LogInfo(@"%@", [NSString stringWithFormat:@"同学 %c 开始写作业", charAdd1(i)]);
             if (i != 0) {
                 [self asyncNextTableRow:[NSIndexPath indexPathForRow:i inSection:indexPath.section]];
             }
             NSTimeInterval timesBegin = [[NSDate new] timeIntervalSince1970];
             for (int j = 0; j < 1000000000; j ++) {}
             NSTimeInterval timesEnd = [[NSDate new] timeIntervalSince1970];
-            LogInfo(@"%@ 耗时\t  %f", [NSString stringWithFormat:@"同学 %c 提交作业", charAdd(i)], timesEnd - timesBegin);
+            LogInfo(@"%@ 耗时\t  %f", [NSString stringWithFormat:@"同学 %c 提交作业", charAdd1(i)], timesEnd - timesBegin);
             sleep(2.5);
             dispatch_group_leave(group);
         });
@@ -235,14 +227,14 @@ static NSString *cellName = @"cell";
         dispatch_group_enter(group);
         dispatch_async(queue, ^{
             
-            LogInfo(@"%@", [NSString stringWithFormat:@"开始批改同学 %c 作业", charAdd(i)]);
+            LogInfo(@"%@", [NSString stringWithFormat:@"开始批改同学 %c 作业", charAdd1(i)]);
             if (i != 0) {
                 [self asyncNextTableRow:[NSIndexPath indexPathForRow:i inSection:indexPath.section]];
             }
             NSTimeInterval timesBegin = [[NSDate new] timeIntervalSince1970];
             for (int j = 0; j < 1000000000; j ++) {}
             NSTimeInterval timesEnd = [[NSDate new] timeIntervalSince1970];
-            LogInfo(@"%@ 耗时\t  %f", [NSString stringWithFormat:@"批改同学 %c 作业", charAdd(i)], timesEnd - timesBegin);
+            LogInfo(@"%@ 耗时\t  %f", [NSString stringWithFormat:@"批改同学 %c 作业", charAdd1(i)], timesEnd - timesBegin);
             sleep(2.5);
             dispatch_group_leave(group);
         });
