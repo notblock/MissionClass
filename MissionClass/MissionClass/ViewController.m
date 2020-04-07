@@ -10,6 +10,7 @@
 #import "MissionClassDispatch.h"
 #import "MissionClass-Swift.h"
 #import "MissionClassDispatchBug.h"
+#import "MethodViewController.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
@@ -33,6 +34,11 @@
                               @"iOS swift dispatch 系列",
                               @"iOS dispatch系列 bug"
                                 ]
+                    },
+                  @{@"head":@"iOS runtime截流系列",
+                    @"data":@[
+                            @"方法若不存在，请不要闪退"
+                            ]
                     }
                   ];
 }
@@ -84,6 +90,10 @@
     }
     else if (indexPath.section == 0 && indexPath.row == 2)  {
         MissionClassDispatchBug *control = [[MissionClassDispatchBug alloc] init];
+        control.title = ((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row];
+        [self.navigationController pushViewController:control animated:YES];
+    }else if (indexPath.section == 1 && indexPath.row == 0)  {
+        MethodViewController *control = [[MethodViewController alloc] init];
         control.title = ((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row];
         [self.navigationController pushViewController:control animated:YES];
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		262F786D243C7A45004D96F7 /* MethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F786C243C7A45004D96F7 /* MethodViewController.m */; };
+		262F7871243C7A97004D96F7 /* NSObject+GetException.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F786F243C7A97004D96F7 /* NSObject+GetException.m */; };
 		2678968B2415CA8800755972 /* MissionClassDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678968A2415CA8800755972 /* MissionClassDispatch.swift */; };
 		26806822240DDCF900A64D66 /* DebugText.m in Sources */ = {isa = PBXBuildFile; fileRef = 26806820240DDCF900A64D66 /* DebugText.m */; };
 		26806825240DDD0B00A64D66 /* DebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26806824240DDD0B00A64D66 /* DebugView.m */; };
@@ -23,6 +25,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		262F786B243C7A45004D96F7 /* MethodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodViewController.h; sourceTree = "<group>"; };
+		262F786C243C7A45004D96F7 /* MethodViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MethodViewController.m; sourceTree = "<group>"; };
+		262F786F243C7A97004D96F7 /* NSObject+GetException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GetException.m"; sourceTree = "<group>"; };
+		262F7870243C7A97004D96F7 /* NSObject+GetException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GetException.h"; sourceTree = "<group>"; };
 		2678968A2415CA8800755972 /* MissionClassDispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionClassDispatch.swift; sourceTree = "<group>"; };
 		2678968C2415CAB900755972 /* MissionClass-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MissionClass-Bridging-Header.h"; sourceTree = "<group>"; };
 		26806820240DDCF900A64D66 /* DebugText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugText.m; sourceTree = "<group>"; };
@@ -60,6 +66,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		262F786E243C7A8C004D96F7 /* GetException */ = {
+			isa = PBXGroup;
+			children = (
+				262F7870243C7A97004D96F7 /* NSObject+GetException.h */,
+				262F786F243C7A97004D96F7 /* NSObject+GetException.m */,
+			);
+			path = GetException;
+			sourceTree = "<group>";
+		};
 		2680681F240DDCF900A64D66 /* DebugView */ = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +131,7 @@
 		7C1C06DA240D3C5D00D1AEDC /* util */ = {
 			isa = PBXGroup;
 			children = (
+				262F786E243C7A8C004D96F7 /* GetException */,
 				2680681F240DDCF900A64D66 /* DebugView */,
 				7C1C06DC240D3C6D00D1AEDC /* ClassRoute.h */,
 				7C1C06DD240D3C6D00D1AEDC /* ClassRoute.m */,
@@ -134,6 +150,8 @@
 				26806832240F991A00A64D66 /* MissionClassDispatchBug.mm */,
 				2678968A2415CA8800755972 /* MissionClassDispatch.swift */,
 				2678968C2415CAB900755972 /* MissionClass-Bridging-Header.h */,
+				262F786B243C7A45004D96F7 /* MethodViewController.h */,
+				262F786C243C7A45004D96F7 /* MethodViewController.m */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -212,6 +230,8 @@
 				2680682B240DFAA300A64D66 /* ConsumingTimes.m in Sources */,
 				26806825240DDD0B00A64D66 /* DebugView.m in Sources */,
 				7C1C06DE240D3C6D00D1AEDC /* ClassRoute.m in Sources */,
+				262F786D243C7A45004D96F7 /* MethodViewController.m in Sources */,
+				262F7871243C7A97004D96F7 /* NSObject+GetException.m in Sources */,
 				2678968B2415CA8800755972 /* MissionClassDispatch.swift in Sources */,
 				7C1C06C9240D3A9D00D1AEDC /* ViewController.m in Sources */,
 				7C1C06D4240D3A9E00D1AEDC /* main.m in Sources */,

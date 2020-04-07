@@ -14,6 +14,8 @@ open class SWMCDispatch : UIViewController, UITableViewDataSource, UITableViewDe
     
     var table:UITableView? = nil
     
+    var debugText:DebugView? = nil
+    
     var data:NSArray?
     
     override open func viewDidLoad() {
@@ -24,19 +26,17 @@ open class SWMCDispatch : UIViewController, UITableViewDataSource, UITableViewDe
         do {
             let tempData = try Data(contentsOf: url!)
             data = try PropertyListSerialization.propertyList(from: tempData, options: [], format: nil) as? NSArray
-            
-//           let dataUrl = Bundle.main.path(forResource: "dispatch", ofType: "plist")
-            
-            
         } catch  {
             print(error)
         }
-        
-        
-        table = UITableView(frame: self.view.bounds, style: UITableView.Style.grouped)
+        let frame:CGRect = self.view.frame
+        table = UITableView(frame: CGRect(x:frame.minX, y: frame.minY, width: frame.width, height: frame.height / 2), style: UITableView.Style.grouped)
         table?.delegate = self
         table?.dataSource = self
         self.view .addSubview(table!)
+        
+        debugText = DebugView(frame: CGRect(x: 0, y: frame.height / 2 + frame.minY, width: frame.width, height: frame.height / 2))
+        self.view.addSubview(debugText!)
     }
     
     
@@ -68,8 +68,23 @@ open class SWMCDispatch : UIViewController, UITableViewDataSource, UITableViewDe
             cell = UITableViewCell(style: UITableViewCell.CellStyle.default, reuseIdentifier: "cell")
         }
         cell?.textLabel?.text = String(format: "同学 %c", charAdd1(Int64(indexPath.row)))
+        debugText?.logInfo(String(format: "%@ %c","同学",charAdd1(Int64(indexPath.row))))
         return cell!;
     }
+    
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        
+    }
+    
+    private func nextCell(indexPath:IndexPath) {
+        
+        table?.scrollToRow(at: indexPath, at: UITableView.ScrollPosition.middle, animated: true)
+        let cell:UITableViewCell = (table?.cellForRow(at: indexPath))!
+        cell.textLabel?.textColor = UIColor.purple
+    }
+    
     
     private func dispatchAsyncToSync() {
         
@@ -85,9 +100,7 @@ open class SWMCDispatch : UIViewController, UITableViewDataSource, UITableViewDe
         };
         
         readQueue.async {
-            for i in 0...classmates() {
-                
-            }
+            
         }
         
         authQueue.async {
