@@ -7,7 +7,10 @@
 //
 
 #import "MethodViewController.h"
-#import "NSObject+GetException.h"
+//#import "NSObject+GetException.h"
+#import "TestObj.h"
+#import "TestBlock.h"
+#import <objc/message.h>
 
 @interface MethodViewController ()
 
@@ -27,14 +30,12 @@
     [self.view addSubview:btn];
 }
 
-/*
-#pragma mark - Navigation
+- (void)test {
+    TestBlock *obj = [TestBlock new];
+    
+    ((void(*)(id obj, SEL method))objc_msgSend)(obj, @selector(test));
+//    ((void(*)(id obj, SEL method))objc_msgSend)(obj, @selector(test2));
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
 }
-*/
 
 @end

@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		262F786D243C7A45004D96F7 /* MethodViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F786C243C7A45004D96F7 /* MethodViewController.m */; };
-		262F7871243C7A97004D96F7 /* NSObject+GetException.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F786F243C7A97004D96F7 /* NSObject+GetException.m */; };
+		262F7874243D57C8004D96F7 /* TestObj.mm in Sources */ = {isa = PBXBuildFile; fileRef = 262F7873243D57C8004D96F7 /* TestObj.mm */; };
+		262F7887243F152A004D96F7 /* TestBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = 262F7886243F152A004D96F7 /* TestBlock.m */; };
 		2678968B2415CA8800755972 /* MissionClassDispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2678968A2415CA8800755972 /* MissionClassDispatch.swift */; };
 		26806822240DDCF900A64D66 /* DebugText.m in Sources */ = {isa = PBXBuildFile; fileRef = 26806820240DDCF900A64D66 /* DebugText.m */; };
 		26806825240DDD0B00A64D66 /* DebugView.m in Sources */ = {isa = PBXBuildFile; fileRef = 26806824240DDD0B00A64D66 /* DebugView.m */; };
@@ -16,6 +17,9 @@
 		2680682B240DFAA300A64D66 /* ConsumingTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680682A240DFAA300A64D66 /* ConsumingTimes.m */; };
 		26806830240F98D300A64D66 /* MissionClassDispatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2680682E240F98D300A64D66 /* MissionClassDispatch.mm */; };
 		26806833240F991A00A64D66 /* MissionClassDispatchBug.mm in Sources */ = {isa = PBXBuildFile; fileRef = 26806832240F991A00A64D66 /* MissionClassDispatchBug.mm */; };
+		26BF35342441BD3D00098A86 /* ClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BF35332441BD3D00098A86 /* ClientManager.m */; };
+		26BF35382441BDBB00098A86 /* ClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BF35362441BDBB00098A86 /* ClientViewController.m */; };
+		26BF35392441BDBB00098A86 /* ClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26BF35372441BDBB00098A86 /* ClientViewController.xib */; };
 		7C1C06C6240D3A9D00D1AEDC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C06C5240D3A9D00D1AEDC /* AppDelegate.m */; };
 		7C1C06C9240D3A9D00D1AEDC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7C1C06C8240D3A9D00D1AEDC /* ViewController.m */; };
 		7C1C06CE240D3A9E00D1AEDC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C1C06CD240D3A9E00D1AEDC /* Assets.xcassets */; };
@@ -27,8 +31,17 @@
 /* Begin PBXFileReference section */
 		262F786B243C7A45004D96F7 /* MethodViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MethodViewController.h; sourceTree = "<group>"; };
 		262F786C243C7A45004D96F7 /* MethodViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MethodViewController.m; sourceTree = "<group>"; };
-		262F786F243C7A97004D96F7 /* NSObject+GetException.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+GetException.m"; sourceTree = "<group>"; };
-		262F7870243C7A97004D96F7 /* NSObject+GetException.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+GetException.h"; sourceTree = "<group>"; };
+		262F7872243D57C8004D96F7 /* TestObj.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestObj.h; sourceTree = "<group>"; };
+		262F7873243D57C8004D96F7 /* TestObj.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = TestObj.mm; sourceTree = "<group>"; };
+		262F7875243D5818004D96F7 /* TestObj.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestObj.cpp; sourceTree = "<group>"; };
+		262F7876243D5A57004D96F7 /* TestObj1.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestObj1.cpp; sourceTree = "<group>"; };
+		262F7877243D5AF2004D96F7 /* TestObj2.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestObj2.cpp; sourceTree = "<group>"; };
+		262F7878243D6EFF004D96F7 /* TestObj3.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestObj3.cpp; sourceTree = "<group>"; };
+		262F7879243D6F92004D96F7 /* TestObj4.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestObj4.cpp; sourceTree = "<group>"; };
+		262F7882243EC85B004D96F7 /* TestObj.mii */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp.preprocessed; path = TestObj.mii; sourceTree = "<group>"; };
+		262F7885243F152A004D96F7 /* TestBlock.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBlock.h; sourceTree = "<group>"; };
+		262F7886243F152A004D96F7 /* TestBlock.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBlock.m; sourceTree = "<group>"; };
+		262F788E243F1EC6004D96F7 /* TestBlock.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = TestBlock.cpp; sourceTree = "<group>"; };
 		2678968A2415CA8800755972 /* MissionClassDispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionClassDispatch.swift; sourceTree = "<group>"; };
 		2678968C2415CAB900755972 /* MissionClass-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MissionClass-Bridging-Header.h"; sourceTree = "<group>"; };
 		26806820240DDCF900A64D66 /* DebugText.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DebugText.m; sourceTree = "<group>"; };
@@ -42,6 +55,11 @@
 		2680682F240F98D300A64D66 /* MissionClassDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionClassDispatch.h; sourceTree = "<group>"; };
 		26806831240F991A00A64D66 /* MissionClassDispatchBug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionClassDispatchBug.h; sourceTree = "<group>"; };
 		26806832240F991A00A64D66 /* MissionClassDispatchBug.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MissionClassDispatchBug.mm; sourceTree = "<group>"; };
+		26BF35322441BD3D00098A86 /* ClientManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientManager.h; sourceTree = "<group>"; };
+		26BF35332441BD3D00098A86 /* ClientManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClientManager.m; sourceTree = "<group>"; };
+		26BF35352441BDBB00098A86 /* ClientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientViewController.h; sourceTree = "<group>"; };
+		26BF35362441BDBB00098A86 /* ClientViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClientViewController.m; sourceTree = "<group>"; };
+		26BF35372441BDBB00098A86 /* ClientViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClientViewController.xib; sourceTree = "<group>"; };
 		7C1C06C1240D3A9D00D1AEDC /* MissionClass.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MissionClass.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C1C06C4240D3A9D00D1AEDC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7C1C06C5240D3A9D00D1AEDC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -69,8 +87,6 @@
 		262F786E243C7A8C004D96F7 /* GetException */ = {
 			isa = PBXGroup;
 			children = (
-				262F7870243C7A97004D96F7 /* NSObject+GetException.h */,
-				262F786F243C7A97004D96F7 /* NSObject+GetException.m */,
 			);
 			path = GetException;
 			sourceTree = "<group>";
@@ -92,6 +108,15 @@
 				26806827240DF5ED00A64D66 /* dispatch.plist */,
 			);
 			path = data;
+			sourceTree = "<group>";
+		};
+		26BF35312441BD3100098A86 /* ClientManage */ = {
+			isa = PBXGroup;
+			children = (
+				26BF35322441BD3D00098A86 /* ClientManager.h */,
+				26BF35332441BD3D00098A86 /* ClientManager.m */,
+			);
+			path = ClientManage;
 			sourceTree = "<group>";
 		};
 		7C1C06B8240D3A9D00D1AEDC = {
@@ -131,12 +156,24 @@
 		7C1C06DA240D3C5D00D1AEDC /* util */ = {
 			isa = PBXGroup;
 			children = (
+				26BF35312441BD3100098A86 /* ClientManage */,
 				262F786E243C7A8C004D96F7 /* GetException */,
 				2680681F240DDCF900A64D66 /* DebugView */,
 				7C1C06DC240D3C6D00D1AEDC /* ClassRoute.h */,
 				7C1C06DD240D3C6D00D1AEDC /* ClassRoute.m */,
 				26806829240DFAA300A64D66 /* ConsumingTimes.h */,
 				2680682A240DFAA300A64D66 /* ConsumingTimes.m */,
+				262F7885243F152A004D96F7 /* TestBlock.h */,
+				262F7886243F152A004D96F7 /* TestBlock.m */,
+				262F788E243F1EC6004D96F7 /* TestBlock.cpp */,
+				262F7872243D57C8004D96F7 /* TestObj.h */,
+				262F7873243D57C8004D96F7 /* TestObj.mm */,
+				262F7882243EC85B004D96F7 /* TestObj.mii */,
+				262F7875243D5818004D96F7 /* TestObj.cpp */,
+				262F7876243D5A57004D96F7 /* TestObj1.cpp */,
+				262F7877243D5AF2004D96F7 /* TestObj2.cpp */,
+				262F7878243D6EFF004D96F7 /* TestObj3.cpp */,
+				262F7879243D6F92004D96F7 /* TestObj4.cpp */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -152,6 +189,9 @@
 				2678968C2415CAB900755972 /* MissionClass-Bridging-Header.h */,
 				262F786B243C7A45004D96F7 /* MethodViewController.h */,
 				262F786C243C7A45004D96F7 /* MethodViewController.m */,
+				26BF35352441BDBB00098A86 /* ClientViewController.h */,
+				26BF35362441BDBB00098A86 /* ClientViewController.m */,
+				26BF35372441BDBB00098A86 /* ClientViewController.xib */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -217,6 +257,7 @@
 				7C1C06D1240D3A9E00D1AEDC /* LaunchScreen.storyboard in Resources */,
 				26806828240DF5ED00A64D66 /* dispatch.plist in Resources */,
 				7C1C06CE240D3A9E00D1AEDC /* Assets.xcassets in Resources */,
+				26BF35392441BDBB00098A86 /* ClientViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -231,14 +272,17 @@
 				26806825240DDD0B00A64D66 /* DebugView.m in Sources */,
 				7C1C06DE240D3C6D00D1AEDC /* ClassRoute.m in Sources */,
 				262F786D243C7A45004D96F7 /* MethodViewController.m in Sources */,
-				262F7871243C7A97004D96F7 /* NSObject+GetException.m in Sources */,
+				262F7887243F152A004D96F7 /* TestBlock.m in Sources */,
 				2678968B2415CA8800755972 /* MissionClassDispatch.swift in Sources */,
 				7C1C06C9240D3A9D00D1AEDC /* ViewController.m in Sources */,
 				7C1C06D4240D3A9E00D1AEDC /* main.m in Sources */,
 				26806822240DDCF900A64D66 /* DebugText.m in Sources */,
 				26806833240F991A00A64D66 /* MissionClassDispatchBug.mm in Sources */,
+				26BF35342441BD3D00098A86 /* ClientManager.m in Sources */,
+				262F7874243D57C8004D96F7 /* TestObj.mm in Sources */,
 				7C1C06C6240D3A9D00D1AEDC /* AppDelegate.m in Sources */,
 				26806830240F98D300A64D66 /* MissionClassDispatch.mm in Sources */,
+				26BF35382441BDBB00098A86 /* ClientViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,7 +351,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -360,7 +404,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -374,6 +418,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7AB2Q2H5VR;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MissionClass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -394,6 +440,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 7AB2Q2H5VR;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = MissionClass/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

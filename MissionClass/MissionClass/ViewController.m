@@ -11,6 +11,7 @@
 #import "MissionClass-Swift.h"
 #import "MissionClassDispatchBug.h"
 #import "MethodViewController.h"
+#import "ClientViewController.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
@@ -20,11 +21,24 @@
 @end
 
 @implementation ViewController
-
+-(void)testHttp
+{
+    NSURL *url = [NSURL URLWithString:@"https://www.baidu.com"];//此处修改为自己公司的服务器地址
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    NSURLSession *session = [NSURLSession sharedSession];
+    NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error == nil) {
+            NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+            NSLog(@"%@",dict);
+        }
+    }];
+    
+    [dataTask resume];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    
+    [self testHttp];
     [self.table setDelegate:self];
     [self.table setDataSource:self];
     tableData = @[
@@ -37,9 +51,14 @@
                     },
                   @{@"head":@"iOS runtime截流系列",
                     @"data":@[
-                            @"方法若不存在，请不要闪退"
+                            @"方法若不存在，也不会闪退"
                             ]
-                    }
+                    },
+                  @{@"head":@"iOS Socket",
+                    @"data":@[
+                            @"Client"
+                            ]
+                    },
                   ];
 }
 
@@ -94,6 +113,10 @@
         [self.navigationController pushViewController:control animated:YES];
     }else if (indexPath.section == 1 && indexPath.row == 0)  {
         MethodViewController *control = [[MethodViewController alloc] init];
+        control.title = ((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row];
+        [self.navigationController pushViewController:control animated:YES];
+    }else if (indexPath.section == 2 && indexPath.row == 0)  {
+        ClientViewController *control = [[ClientViewController alloc] init];
         control.title = ((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row];
         [self.navigationController pushViewController:control animated:YES];
     }
