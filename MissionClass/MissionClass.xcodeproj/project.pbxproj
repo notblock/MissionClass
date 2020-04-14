@@ -17,6 +17,7 @@
 		2680682B240DFAA300A64D66 /* ConsumingTimes.m in Sources */ = {isa = PBXBuildFile; fileRef = 2680682A240DFAA300A64D66 /* ConsumingTimes.m */; };
 		26806830240F98D300A64D66 /* MissionClassDispatch.mm in Sources */ = {isa = PBXBuildFile; fileRef = 2680682E240F98D300A64D66 /* MissionClassDispatch.mm */; };
 		26806833240F991A00A64D66 /* MissionClassDispatchBug.mm in Sources */ = {isa = PBXBuildFile; fileRef = 26806832240F991A00A64D66 /* MissionClassDispatchBug.mm */; };
+		26BCA72824458F22000956B3 /* ClientListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BCA72724458F22000956B3 /* ClientListViewController.m */; };
 		26BF35342441BD3D00098A86 /* ClientManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BF35332441BD3D00098A86 /* ClientManager.m */; };
 		26BF35382441BDBB00098A86 /* ClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 26BF35362441BDBB00098A86 /* ClientViewController.m */; };
 		26BF35392441BDBB00098A86 /* ClientViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 26BF35372441BDBB00098A86 /* ClientViewController.xib */; };
@@ -55,6 +56,8 @@
 		2680682F240F98D300A64D66 /* MissionClassDispatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionClassDispatch.h; sourceTree = "<group>"; };
 		26806831240F991A00A64D66 /* MissionClassDispatchBug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MissionClassDispatchBug.h; sourceTree = "<group>"; };
 		26806832240F991A00A64D66 /* MissionClassDispatchBug.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MissionClassDispatchBug.mm; sourceTree = "<group>"; };
+		26BCA72624458F22000956B3 /* ClientListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientListViewController.h; sourceTree = "<group>"; };
+		26BCA72724458F22000956B3 /* ClientListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClientListViewController.m; sourceTree = "<group>"; };
 		26BF35322441BD3D00098A86 /* ClientManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientManager.h; sourceTree = "<group>"; };
 		26BF35332441BD3D00098A86 /* ClientManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ClientManager.m; sourceTree = "<group>"; };
 		26BF35352441BDBB00098A86 /* ClientViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClientViewController.h; sourceTree = "<group>"; };
@@ -192,6 +195,8 @@
 				26BF35352441BDBB00098A86 /* ClientViewController.h */,
 				26BF35362441BDBB00098A86 /* ClientViewController.m */,
 				26BF35372441BDBB00098A86 /* ClientViewController.xib */,
+				26BCA72624458F22000956B3 /* ClientListViewController.h */,
+				26BCA72724458F22000956B3 /* ClientListViewController.m */,
 			);
 			path = class;
 			sourceTree = "<group>";
@@ -283,6 +288,7 @@
 				7C1C06C6240D3A9D00D1AEDC /* AppDelegate.m in Sources */,
 				26806830240F98D300A64D66 /* MissionClassDispatch.mm in Sources */,
 				26BF35382441BDBB00098A86 /* ClientViewController.m in Sources */,
+				26BCA72824458F22000956B3 /* ClientListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

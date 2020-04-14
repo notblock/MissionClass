@@ -13,7 +13,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *dailogText;
 @property (weak, nonatomic) IBOutlet UITextField *inputText;
 @property (weak, nonatomic) IBOutlet UIButton *Send;
-@property (weak, nonatomic) IBOutlet UIButton *Connect;
 
 @property (assign) int server_handle;
 @property (nonatomic, strong) ClientManager *clientManager;
@@ -21,16 +20,29 @@
 
 @implementation ClientViewController
 
+- (id)init {
+    self = [super initWithNibName:@"ClientViewController" bundle:[NSBundle mainBundle]];
+    if (self) {
+        
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    self.clientManager = [[ClientManager alloc] init];
-    
+    __weak typeof(self) weakself = self;
+    self.result = ^(id _Nonnull result) {
+        [weakself setDailogs:result];
+    };
 }
 
-- (void)setServHandle:(int)handle setRev:(NSString *)rev {
-    self.server_handle = handle;
-    [self setDailog:rev];
+- (void)setDailogs:(NSDictionary *)result {
+
+    if ([result isKindOfClass:[NSDictionary class]]) {
+        NSDictionary *data = (NSDictionary *)result;
+        [self setDailog:data[@"m"]];
+    }
 }
 
 
@@ -40,21 +52,11 @@
     });
 }
 
-- (IBAction)ClientConnect:(id)sender {
-    __weak typeof(self) wksf = self;
-    [self.clientManager client:^(int server_handle, NSString * _Nonnull revStr)
-    {
-        [wksf setServHandle:server_handle setRev:revStr];
-    }];
-}
-static int sendNum = 0;
 - (IBAction)ClientSend:(id)sender {
     if (self.inputText.text.length > 0) {
-        [self.clientManager sendMsg:self.server_handle Withmsg:[NSString stringWithFormat:@"%@%d\n",self.inputText.text, sendNum ++]];
+        NSDictionary *dic = @{@"f":self.sendIp,@"m":self.inputText.text};
+        [[ClientManager shareInstance] sendMsg:0 Withmsg:dic];
     }
 }
 
-- (IBAction)stop:(id)sender {
-    [self.clientManager stop:self.server_handle];
-}
 @end

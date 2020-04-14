@@ -11,7 +11,8 @@
 #import "MissionClass-Swift.h"
 #import "MissionClassDispatchBug.h"
 #import "MethodViewController.h"
-#import "ClientViewController.h"
+//#import "ClientViewController.h"
+#import "ClientListViewController.h"
 
 @interface ViewController ()<UITableViewDelegate, UITableViewDataSource>
 {
@@ -116,7 +117,7 @@
         control.title = ((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row];
         [self.navigationController pushViewController:control animated:YES];
     }else if (indexPath.section == 2 && indexPath.row == 0)  {
-        ClientViewController *control = [[ClientViewController alloc] init];
+        ClientListViewController *control = [[ClientListViewController alloc] init];
         control.title = ((NSArray *)((NSDictionary *)tableData[indexPath.section])[@"data"])[indexPath.row];
         [self.navigationController pushViewController:control animated:YES];
     }

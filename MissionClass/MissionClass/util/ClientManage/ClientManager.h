@@ -12,8 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface ClientManager : NSObject
 
-- (void)client:(void(^)(int server_handle, NSString *revStr))block;
-- (void)sendMsg:(int)server_handle Withmsg:(NSString *)msg;
++ (ClientManager *)shareInstance;
+- (void)client:(void(^)(int server_handle, id revDic))block;
+- (void)sendMsg:(int)server_handle Withmsg:(id)msg;
 - (void)stop:(int)server_handle;
 @end
 
